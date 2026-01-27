@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Mahmoud El-Kishky — Research, Writing, Ideas</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,600;9..144,800&family=Space+Grotesk:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="noise" aria-hidden="true"></div>
+    <button id="themeToggle" class="theme-toggle" type="button" aria-pressed="false">
+      Theme
+    </button>
+    <header class="site-header">
+      <div class="brand">
+        <span class="brand-mark">A</span>
+        <div class="brand-text">
+          <p class="brand-name">Mahmoud El-Kishky</p>
+          <p class="brand-tag">Embedded Systems · Cryptography · Testing</p>
+        </div>
+      </div>
+      <nav class="nav">
+        <a href="#jobs">Work</a>
+        <a href="publications.html">Papers</a>
+        <a href="bio.html">Bio</a>
+        <a href="#about">About</a>
+        <a class="cta" href="mailto:mahmoudelkishky@gmail.com">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">Embedded systems, cryptography, and practical engineering</p>
+          <h1>
+            Thoughtful research with practical impact — spanning
+            embedded systems, cryptography, and real-world decisions.
+          </h1>
+          <p class="lede">
+            Mahmoud El-Kishky focuses on embedded systems and cryptography,
+            highlighting publications and ongoing projects. It blends rigorous
+            analysis with accessible writing
+            for collaborators, students, and curious readers.
+          </p>
+          <div class="hero-actions">
+            <a class="cta" href="resume.pdf">Download CV</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="jobs" class="section">
+        <div class="section-header">
+          <h2>Experience</h2>
+          <p>Recent roles and responsibilities.</p>
+        </div>
+        <div class="grid">
+          <article>
+            <h3>Trend Micro</h3>
+            <p><strong>Senior Software Engineer in Test</strong></p>
+            <p>
+              Automated testing for enterprise security devices using Python and
+              distributed Linux systems. Debugged and maintained multiple test
+              framework components, including legacy infrastructure.
+            </p>
+            <p>
+              Worked with Docker, Linux networking, and cloud-connected
+              security appliances. Supported QA pipelines and improved
+              reliability of integration testing.
+            </p>
+          </article>
+          <article>
+            <h3>CACI / NASA Johnson Space Center</h3>
+            <p><strong>Spacecraft Flight Software &amp; Simulation Engineer</strong></p>
+            <p>
+              Developed Class A flight software for NASA's Lunar Gateway Vehicle
+              Systems Manager (VSM) using C/C++ and the Core Flight System
+              (cFS).
+            </p>
+            <p>
+              Built Python and Perl scripts for automated testing, verification,
+              and simulation workflows. Created software specifications,
+              architecture designs, and detailed documentation for mission-
+              critical components.
+            </p>
+            <p>
+              Collaborated with data services, simulation, and cross-contractor
+              integration teams and supported on-site engineering activities at
+              Johnson Space Center.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section id="about" class="section about">
+        <div>
+          <h2>About</h2>
+          <p>Mahmoud El-Kishky, a software engineer.</p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>© 2026 Mahmoud El-Kishky. Open research, open collaboration.</p>
+      <div class="footer-links">
+        <a href="tel:+19039203207">(903) 920-3207</a>
+        <a href="#">Scholar</a>
+        <a href="#">GitHub</a>
+      </div>
+    </footer>
+    <script>
+      (() => {
+        const key = "theme";
+        const root = document.body;
+        const btn = document.getElementById("themeToggle");
+        const setTheme = (mode) => {
+          const isDark = mode === "dark";
+          root.classList.toggle("dark-mode", isDark);
+          btn.textContent = isDark ? "Light" : "Dark";
+          btn.setAttribute("aria-pressed", String(isDark));
+          localStorage.setItem(key, mode);
+        };
+        const saved = localStorage.getItem(key);
+        const prefersDark =
+          window.matchMedia &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches;
+        setTheme(saved || (prefersDark ? "dark" : "light"));
+        btn.addEventListener("click", () => {
+          setTheme(root.classList.contains("dark-mode") ? "light" : "dark");
+        });
+      })();
+    </script>
+  </body>
+</html>

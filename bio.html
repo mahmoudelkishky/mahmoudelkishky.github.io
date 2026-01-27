@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Mahmoud El-Kishky — Bio</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,600;9..144,800&family=Space+Grotesk:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="noise" aria-hidden="true"></div>
+    <button id="themeToggle" class="theme-toggle" type="button" aria-pressed="false">
+      Theme
+    </button>
+    <header class="site-header">
+      <a class="brand" href="index.html">
+        <span class="brand-mark">M</span>
+        <div class="brand-text">
+          <p class="brand-name">Mahmoud El-Kishky</p>
+          <p class="brand-tag">Software Engineer</p>
+        </div>
+      </a>
+      <nav class="nav">
+        <a href="index.html#work">Work</a>
+        <a href="publications.html">Papers</a>
+        <a href="bio.html">Bio</a>
+        <a href="index.html#about">About</a>
+        <a class="cta" href="mailto:mahmoudelkishky@gmail.com">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="page-hero">
+        <div>
+          <p class="eyebrow">Bio</p>
+          <h1>A few things I enjoy outside of work.</h1>
+          <p class="lede">
+            I like to slow down, think deeply, and explore ideas through play,
+            conversation, and the occasional long walk.
+          </p>
+        </div>
+        <div class="meta-card">
+          <span>Interests</span>
+          <h3>Games, parks, and puzzles</h3>
+          <p>
+            These are the spaces where I enjoy pondering, tinkering, and
+            recharging.
+          </p>
+          <a class="section-link" href="index.html">Back to home →</a>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-header">
+          <h2>What I Like</h2>
+          <p>Simple joys that keep me curious.</p>
+        </div>
+        <div class="grid">
+          <article>
+            <h3>Board games &amp; Dungeons and Dragons</h3>
+            <p>
+              I enjoy the strategy, storytelling, and collaborative problem
+              solving that comes from sitting around a table with friends.
+            </p>
+          </article>
+          <article>
+            <h3>Tinkering with hardware</h3>
+            <p>
+              I like exploring embedded devices, sensors, and small builds that
+              connect software to the physical world.
+            </p>
+          </article>
+          <article>
+            <h3>Walks through parks</h3>
+            <p>
+              Long walks help me think clearly. Parks are my favorite places to
+              reset and reflect.
+            </p>
+          </article>
+          <article>
+            <h3>Puzzles</h3>
+            <p>
+              I love logic puzzles and brainteasers. They are a fun way to
+              practice patience and structured thinking.
+            </p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>© 2026 Mahmoud El-Kishky. Open research, open collaboration.</p>
+      <div class="footer-links">
+        <a href="mailto:mahmoudelkishky@gmail.com">Email</a>
+        <a href="publications.html">Publications</a>
+        <a href="bio.html">Bio</a>
+      </div>
+    </footer>
+    <script>
+      (() => {
+        const key = "theme";
+        const root = document.body;
+        const btn = document.getElementById("themeToggle");
+        const setTheme = (mode) => {
+          const isDark = mode === "dark";
+          root.classList.toggle("dark-mode", isDark);
+          btn.textContent = isDark ? "Light" : "Dark";
+          btn.setAttribute("aria-pressed", String(isDark));
+          localStorage.setItem(key, mode);
+        };
+        const saved = localStorage.getItem(key);
+        const prefersDark =
+          window.matchMedia &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches;
+        setTheme(saved || (prefersDark ? "dark" : "light"));
+        btn.addEventListener("click", () => {
+          setTheme(root.classList.contains("dark-mode") ? "light" : "dark");
+        });
+      })();
+    </script>
+  </body>
+</html>
