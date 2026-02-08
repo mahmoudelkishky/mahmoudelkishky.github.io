@@ -69,7 +69,7 @@ a:hover {
   font-size: 0.92rem;
 }
 
-.nav .button {
+.button {
   border: 1px solid var(--border);
   padding: 8px 12px;
   border-radius: 6px;
