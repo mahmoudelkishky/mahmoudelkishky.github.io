@@ -166,7 +166,7 @@ main {
   padding: 40px 7vw 60px;
   position: relative;
   z-index: 1;
-  max-width: 960px;
+  max-width: min(1180px, 90vw);
   margin: 0 auto;
 }
 
