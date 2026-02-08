@@ -14,22 +14,17 @@
   </head>
   <body>
     <div class="noise" aria-hidden="true"></div>
-    <button id="themeToggle" class="theme-toggle" type="button" aria-pressed="false">
-      Theme
-    </button>
     <header class="site-header">
       <a class="brand" href="index.html">
-        <span class="brand-mark">A</span>
         <div class="brand-text">
           <p class="brand-name">Mahmoud El-Kishky</p>
           <p class="brand-tag">Embedded Systems · Cryptography · Testing</p>
         </div>
       </a>
       <nav class="nav">
-        <a href="index.html#work">Work</a>
+        <a href="index.html#jobs">Experience</a>
         <a href="publications.html">Papers</a>
         <a href="bio.html">Bio</a>
-        <a href="index.html#about">About</a>
         <button class="cta">Contact</button>
       </nav>
     </header>
@@ -107,27 +102,5 @@
         <a href="#">GitHub</a>
       </div>
     </footer>
-    <script>
-      (() => {
-        const key = "theme";
-        const root = document.body;
-        const btn = document.getElementById("themeToggle");
-        const setTheme = (mode) => {
-          const isDark = mode === "dark";
-          root.classList.toggle("dark-mode", isDark);
-          btn.textContent = isDark ? "Light" : "Dark";
-          btn.setAttribute("aria-pressed", String(isDark));
-          localStorage.setItem(key, mode);
-        };
-        const saved = localStorage.getItem(key);
-        const prefersDark =
-          window.matchMedia &&
-          window.matchMedia("(prefers-color-scheme: dark)").matches;
-        setTheme(saved || (prefersDark ? "dark" : "light"));
-        btn.addEventListener("click", () => {
-          setTheme(root.classList.contains("dark-mode") ? "light" : "dark");
-        });
-      })();
-    </script>
   </body>
 </html>

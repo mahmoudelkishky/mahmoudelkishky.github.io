@@ -30,23 +30,6 @@ body {
   min-height: 100vh;
 }
 
-body.dark-mode {
-  --ink: #e5e7eb;
-  --paper: #0f1112;
-  --slate: #cbd5f5;
-  --fog: rgba(229, 231, 235, 0.1);
-  --bg1: #0f1112;
-  --bg2: #0f1112;
-  --bg3: #0f1112;
-  --bg4: #0f1112;
-  --bg5: #0f1112;
-  --surface: #121416;
-  --surface-muted: #121416;
-  --border: rgba(229, 231, 235, 0.18);
-  --header-bg: #0f1112;
-  --shadow: none;
-}
-
 .noise {
   display: none;
 }
@@ -118,34 +101,6 @@ body.dark-mode {
   width: 0;
 }
 
-.theme-toggle {
-  position: fixed;
-  top: 16px;
-  right: 16px;
-  z-index: 6;
-  border: 1px solid var(--border);
-  background: var(--surface);
-  color: var(--ink);
-  padding: 8px 12px;
-  border-radius: 999px;
-  font-size: 12px;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  font-weight: 700;
-  cursor: pointer;
-  box-shadow: none;
-  transition: background 0.2s ease;
-}
-
-.theme-toggle:hover {
-  transform: none;
-}
-
-body.dark-mode .noise {
-  mix-blend-mode: normal;
-  opacity: 0;
-}
-
 .cta {
   border: 1px solid var(--border);
   background: transparent;
@@ -183,8 +138,8 @@ main {
 }
 
 .eyebrow {
-  font-size: 12px;
-  letter-spacing: 0.2em;
+  font-size: 18px;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--teal);
   font-weight: 600;
